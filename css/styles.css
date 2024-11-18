@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -5,9 +6,102 @@ body {
   padding: 20px;
 }
 
+/* Estilo del título */
 h1 {
   text-align: center;
   color: #333;
+  margin-bottom: 30px;
 }
 
+/* Flexbox para organizar las tarjetas */
+#listaUsuarios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+}
 
+/* Estilo de la card de cada usuario */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  overflow: hidden;
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+/* Contenedor de la imagen dentro de la card */
+.card .foto-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para hover */
+}
+
+.card .foto-container img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Efecto de hover */
+}
+
+/* Efecto hover en la foto */
+.card .foto-container:hover img {
+  transform: scale(1.1); /* Aumenta un poco el tamaño de la imagen */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra cuando se pasa el ratón */
+}
+
+.card .foto-container:hover {
+  transform: translateY(-5px); /* Levantar la foto */
+}
+
+/* Contenedor de la información debajo de la foto */
+.card .info-container {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Estilos para los detalles de usuario */
+.card .info-container strong {
+  font-size: 16px;
+  color: #333;
+}
+
+.card .info-container p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Estilo para el contenedor de la dirección y la empresa */
+.card .direccion-container {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+  font-size: 13px;
+  color: #777;
+}
+
+/* Estilo para los detalles de la empresa y dirección */
+.card .direccion-container p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Responsive: hacer que las cards se ajusten en pantallas pequeñas */
+@media (max-width: 768px) {
+  #listaUsuarios {
+    justify-content: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 350px;
+  }
+}
