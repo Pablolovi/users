@@ -24,21 +24,26 @@ fetch('https://jsonplaceholder.typicode.com/users')
       li.classList.add('card');  // Añadimos la clase 'card' para aplicar estilos
 
       // Insertamos la información del usuario en formato HTML dentro del <li>
-      li.innerHTML = `
-        <div class="foto-container">
-          <img src="${usuario.img}" alt="Imagen de ${usuario.name}">
-        </div>
-        <div class="info-container">
-          <strong>${usuario.name}</strong>
-          <p>Edad: ${usuario.edad}</p>
-          <p>Username: ${usuario.username}</p>
-          <p>Email: ${usuario.email}</p>
-          <div class="direccion-container">
-            <p>${usuario.company.name}</p>
-            <p>${usuario.address.street}, ${usuario.address.suite}, ${usuario.address.city}</p>
-          </div>
-        </div>
-      `;
+    // Insertamos la información del usuario en formato HTML dentro del <li>
+li.innerHTML = `
+<div class="foto-container">
+  <img src="${usuario.img}" alt="Imagen de ${usuario.name}">
+</div>
+<div class="info-container">
+  
+  <strong>${usuario.name}</strong>
+  <p><strong>Edad:</strong> ${usuario.edad}</p> <!-- Título en negrita para Edad -->
+  <p><strong>Username:</strong> ${usuario.username}</p> <!-- Título en negrita para Username -->
+  <p><strong>Email:</strong> ${usuario.email}</p> <!-- Título en negrita para Email -->
+  <p><strong>Teléfono:</strong> ${usuario.phone}</p> <!-- Título en negrita para Teléfono -->
+  <div class="direccion-container">
+    <strong>Dirección:</strong> <!-- Título en negrita para Dirección -->
+    <p><strong>${usuario.company.name}</strong></p> <!-- Contenido de la dirección en negrita -->
+    <p><strong>${usuario.address.street}, ${usuario.address.suite}, ${usuario.address.city}</strong></p> <!-- Todo el contenido en negrita -->
+  </div>
+</div>
+`;
+
 
       // Añadimos el <li> creado a la lista <ul> en el DOM
       listaUsuarios.appendChild(li);
